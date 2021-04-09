@@ -1,0 +1,20 @@
+{
+  "name": "abc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "new.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.5",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon new.js"
+  },
+  "keywords": [
+    "kashish"
+  ],
+  "author": "kash",
+  "license": "ISC"
+}
