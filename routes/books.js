@@ -23,7 +23,8 @@ router.get('/:id',async(req,res)=> {
 router.delete('/:id',async(req,res)=> {
     try {
         const book=await Book.findById(req.params.id)
-        res.delete(book)
+        const b1=await book.remove()
+        res.send(book)
     }catch(err) {
         res.send(err)
     }
@@ -40,6 +41,19 @@ router.post('/',async(req,res) => {
         const b1=await book.save()
         res.json(b1)
     }catch(err){
+        res.send(err)
+    }
+})
+
+router.patch('/',async(req,res) => {
+    try {
+        const book=await Book.findById(req.params.id)
+        book.issued=req.body.issued
+        book.name=req.body.name
+        book.code=req.body.code
+        const b1=await book.remove()
+        res.send(book)
+    }catch(err) {
         res.send(err)
     }
 })
